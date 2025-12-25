@@ -489,12 +489,6 @@ customElements.define('business-application', class BusinessApplication extends 
 			showLoading();
 			
 			setTimeout(() => {
-				const formData = {};
-				for (const [key, value] of data.entries()) {
-					formData[key] = formData[key] ? [formData[key], value].flat() : value;
-				}
-				console.log('Form submitted:', formData);
-				
 				hideLoading();
 				this.result({ reply: ['success'], error: false, target: submitButton });
 				StorageManager.clear('businessApplication');
